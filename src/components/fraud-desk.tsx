@@ -63,7 +63,7 @@ export function FraudDesk() {
         Counts transfers made in this demo session; the seeded history was not checked.
       </p>
 
-      <div className="grid items-start gap-6 lg:grid-cols-[1fr_1.15fr]">
+      <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[1fr_1.15fr]">
         <Card title={`Case queue (${metrics.openCases} open)`}>
           <ul className="-mx-4 -my-4 divide-y divide-line">
             {queue.map((r) => {

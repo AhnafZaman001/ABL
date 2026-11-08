@@ -26,7 +26,7 @@ export function ContactApp() {
   const history = approvals.filter((a) => a.status !== "pending");
 
   return (
-    <div className="mx-auto grid max-w-6xl gap-8 px-4 py-8 lg:grid-cols-[1fr_auto]">
+    <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-8 lg:grid-cols-[1fr_auto]">
       <div className="space-y-4">
         <Card title="Whose phone is this?">
           {data.contacts.length === 0 ? (

@@ -1,5 +1,6 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { formatPKR, initials, timeAgo } from "@/lib/format";
 import { SCENARIOS } from "@/lib/scenarios";
@@ -15,9 +16,15 @@ interface FlowState {
   prefill?: SendPrefill;
 }
 
+/** Reads ?customer= so walkthrough links open the right person; the key resets state when it changes. */
 export function CustomerApp() {
+  const initial = useSearchParams().get("customer") ?? "c_nasreen";
+  return <CustomerView key={initial} initialCustomerId={initial} />;
+}
+
+function CustomerView({ initialCustomerId }: { initialCustomerId: string }) {
   const { data, refresh } = useDemo();
-  const [customerId, setCustomerId] = useState("c_nasreen");
+  const [customerId, setCustomerId] = useState(initialCustomerId);
   const [flow, setFlow] = useState<FlowState | null>(null);
   const [showProtection, setShowProtection] = useState(false);
   const [report, setReport] = useState<{ transferId?: string } | null>(null);
@@ -46,7 +53,7 @@ export function CustomerApp() {
   }
 
   return (
-    <div className="mx-auto grid max-w-6xl gap-8 px-4 py-8 lg:grid-cols-[1fr_auto]">
+    <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-8 lg:grid-cols-[1fr_auto]">
       <div className="space-y-4">
         <Card title="Sample customer">
           <div className="grid gap-2 sm:grid-cols-2">

@@ -48,14 +48,20 @@ the moment they decide, and reporting usually happens by phone after the money h
 
 Customer demand has not been validated with interviews yet. Do not claim it until it has.
 
-## Build modules
+## Build modules (all complete)
 
 1. Project setup, data model, labelled sample data, app shell
 2. Risk engine with bilingual explanations and tests
 3. Customer transfer journey with the pre-payment check
-4. Trusted-contact enrolment and approval
+4. Trusted-contact enrolment and approval, with a 24-hour delay on removal
 5. Scam report flow and fraud-desk console (closes the loop)
-6. Demo scenarios, reset, polish, demo script
+6. Guided walkthrough, mobile layout fixes, demo script ([DEMO_SCRIPT.md](DEMO_SCRIPT.md))
+
+## Open items before submission
+
+- Native-speaker review of the Urdu text.
+- Five to ten short interviews (senior customers, families, branch staff) before claiming demand.
+- Re-count the registration answers inside the form itself.
 
 ## Registration drafts
 
