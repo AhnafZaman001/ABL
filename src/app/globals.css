@@ -1,26 +1,55 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --canvas: #f3f5f5;
+  --surface: #ffffff;
+  --ink: #102022;
+  --muted: #5a6a6e;
+  --line: #dfe5e6;
+  --brand: #0e5a53;
+  --brand-strong: #0a443f;
+  --brand-soft: #e2efed;
+  --allow: #1d7348;
+  --allow-soft: #e5f3eb;
+  --pause: #94600a;
+  --pause-soft: #fbf1de;
+  --hold: #b1461b;
+  --hold-soft: #fbe9e1;
+  --stop: #ad2323;
+  --stop-soft: #fae4e4;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-soft: var(--brand-soft);
+  --color-allow: var(--allow);
+  --color-allow-soft: var(--allow-soft);
+  --color-pause: var(--pause);
+  --color-pause-soft: var(--pause-soft);
+  --color-hold: var(--hold);
+  --color-hold-soft: var(--hold-soft);
+  --color-stop: var(--stop);
+  --color-stop-soft: var(--stop-soft);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-urdu: var(--font-nastaliq);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Nastaliq needs generous line height to avoid clipped glyphs. */
+.urdu {
+  font-family: var(--font-nastaliq), serif;
+  direction: rtl;
+  line-height: 2.1;
 }
